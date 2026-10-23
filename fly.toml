@@ -1,25 +1,30 @@
+# fly.toml app configuration file generated for seha-laravel on 2026-10-23T16:23:55Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-app = "seha-laravel"
-primary_region = "cdg"
+app = 'seha-laravel'
+primary_region = 'ams'
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [env]
-  APP_ENV = "production"
-  APP_DEBUG = "false"
-  LOG_CHANNEL = "stderr"
-  PORT = "8080"
+  APP_DEBUG = 'false'
+  APP_ENV = 'production'
+  LOG_CHANNEL = 'stderr'
+  PORT = '8080'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = "stop"
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 1
-  processes = ["app"]
+  processes = ['app']
 
 [[vm]]
-  memory = "1gb"
-  cpu_kind = "shared"
+  memory = '1gb'
+  cpu_kind = 'shared'
   cpus = 1
+  memory_mb = 256
